@@ -1,3 +1,4 @@
+#Elastic Search - Hadoop Query API
 Perform queries specifying the terms in Elastic Search filtered by a timestamp range on the URL.
 Output file is a set of JSON documents.
 
