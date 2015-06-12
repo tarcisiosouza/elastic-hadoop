@@ -34,12 +34,14 @@ public class ScrollElasticSearchTest
 
     public void testApp()
     {
+    	/*
     	DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
     	DateTime from = formatter.parseDateTime("2006-01-01T02:25:44.370Z");
-//    	DateTime from = new DateTime ("2006-01-01T02:25:44.370Z");
+    	DateTime from = new DateTime ("2006-01-01T02:25:44.370Z");
     	DateTime to = formatter.parseDateTime("2006-12-31T02:28:14.508Z");
     		
     	ScrollElasticSearch scrollTest = new ScrollElasticSearch ("master.hadoop", 9300, "hadoop",  "cdx-pop", "capture");
     	scrollTest.matchQueryTimestampFilter("orig", "\"fussball wm\"", from, to);
+    	*/
     }
 }

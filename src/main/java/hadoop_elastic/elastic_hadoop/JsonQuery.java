@@ -14,9 +14,15 @@ import org.apache.hadoop.fs.FileSystem;
 public class JsonQuery { 
 	public static void main(String[] args) throws Exception 
 	{ 
-		Path outputDir = new Path(args[0]);
-		Path jsonInputQueryPath = new Path (args[1]); //path to the json file with the query
+		//Path outputDir = new Path(args[0]);
+		String jsonOutputPath = args[0]; //path where the output file will be stored
+		String terms = args[1]; //query terms
+		String dateFrom = args[2]; //initial timestamp 
+		String dateTo = args[3]; //final timestamp
 		Configuration conf = new Configuration(); 
+		ScrollElasticSearch scroll = new ScrollElasticSearch ("master.hadoop", 9300, "hadoop",  "cdx-pop", "capture");
+		scroll.matchQueryTimestampFilter(conf,jsonOutputPath,terms,dateFrom,dateTo);
+	/*	
 		conf.set("es.nodes", "hadoop.kbs.uni-hannover.de"); //host
 		conf.set("es.port", "9200"); 
 		conf.set("es.resource", "cdx-pop/capture");
@@ -37,6 +43,6 @@ public class JsonQuery {
 		FileOutputFormat.setOutputPath(job, outputDir); 
 		int code = job.waitForCompletion(true) ? 0 : 1;
 		System.exit(code);
- 
+ */
 	} 
 }
